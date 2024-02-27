@@ -1,0 +1,30 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "project": "npx playwright test",
+    "loginPage": "npx playwright test loginPage.spec.ts",
+    "productPage": "npx playwright test productPage.spec.ts",
+    "addToCartPage": "npx playwright test addToCart.spec.ts",
+    "checkOutPage": "npx playwright test checkOut.spec.ts",
+    "nyc": "npx nyc --reporter=lcov --reporter=text-lcov playwright test",
+    "allure": "npx allure serve allure-results"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.41.2",
+    "@types/node": "^20.11.19",
+    "allure-commandline": "^2.27.0",
+    "allure-playwright": "^2.12.2"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.3",
+    "exceljs": "^4.4.0",
+    "nyc": "^15.1.0",
+    "winston": "^3.11.0"
+  }
+}
