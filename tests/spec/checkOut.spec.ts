@@ -4,7 +4,7 @@ import data1 from "../Data/secondData.json";
 import { Login } from "../page/loginPage";
 import { CheckOut } from "../page/checkOut";
 import { Product } from "../page/productPage";
-import * as logger from "../../logger";
+import * as logger from "../logger";
 import fs from "fs";
 import { parse } from "csv-parse/sync";
 test.describe("sauceLab", () => {

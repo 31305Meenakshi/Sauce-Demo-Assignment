@@ -3,7 +3,7 @@ import data from "../Data/firstData.json";
 import { Login } from "../page/loginPage";
 import { Cart } from "../page/addToCart";
 import { Product } from "../page/productPage";
-import * as logger from "../../logger";
+import * as logger from "../logger";
 import fs from "fs";
 import { parse } from "csv-parse/sync";
 test.describe("sauceLab", () => {
