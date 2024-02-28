@@ -9,14 +9,14 @@ This testing framework is designed to test various functionalities of the **Sauc
 # Test Flow 
 
 1) Login:-
-       - Open the SauceDemo login page.
-       - Enter valid credentials (username and password).
-       - click on the "Login" button.
-       - verify successful login.
-       - Passing the data through Excel, csv and json.
-       - Created the Valid or Invalid Test Cases.
-       - putting the assertion in each test cases.
-       - Applying the Logger on each test cases.
+    - Open the SauceDemo login page.
+    - Enter valid credentials (username and password).
+    - click on the "Login" button.
+    - verify successful login.
+    - Passing the data through Excel, csv and json.
+    - Created the Valid or Invalid Test Cases.
+    - putting the assertion in each test cases.
+    - Applying the Logger on each test cases.
 
 2) ProductPage:-
     - click on the different sections of the productpage.
