@@ -25,7 +25,7 @@ export class Login {
   }
   async loginPage(username: string, password: string) {
     expect(this.logo).toHaveClass("login_logo");
-    // await this.excel.exTest("login", "Login-Details", 1, username, 2, password);
+    await this.excel.exTest("login", "Login-Details", 1, username, 2, password);
     await this.username.fill(username);
     await this.password.fill(password);
     await this.login.click();
