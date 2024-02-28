@@ -5,6 +5,7 @@ import { Login } from "../page/loginPage";
 import { CheckOut } from "../page/checkOut";
 import { Product } from "../page/productPage";
 import * as logger from "../logger";
+import { ReadFromExcel } from "../excel/readFromExcel";
 import fs from "fs";
 import { parse } from "csv-parse/sync";
 test.describe("sauceLab", () => {
@@ -13,6 +14,8 @@ test.describe("sauceLab", () => {
   let checkOut;
   let login;
   let product;
+  let readExcel;
+  let excelProduct;
   //store CSV data in variable
   const records = parse(
     fs.readFileSync(
@@ -29,12 +32,14 @@ test.describe("sauceLab", () => {
     checkOut = new CheckOut(page);
     login = new Login(page);
     product = new Product(page);
+    readExcel = new ReadFromExcel();
+    excelProduct = await readExcel.getProductName();
   });
   for (const record of records) {
     test.beforeEach(async () => {
       await page.goto("https://www.saucedemo.com/v1/index.html");
       await login.loginPage(record.username, record.password);
-      await product.productPage1(data.alphabate, data.productName1);
+      await product.productPage1(data.alphabate, excelProduct[0]);
     });
   }
   test.afterEach(async () => {

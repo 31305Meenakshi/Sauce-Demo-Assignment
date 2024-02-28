@@ -3,6 +3,7 @@ import data from "../Data/firstData.json";
 import { Login } from "../page/loginPage";
 import { Product } from "../page/productPage";
 import * as logger from "../logger";
+import { ReadFromExcel } from "../excel/readFromExcel";
 import fs from "fs";
 import { parse } from "csv-parse/sync";
 test.describe("sauceLab", () => {
@@ -10,6 +11,8 @@ test.describe("sauceLab", () => {
   let context;
   let productPage;
   let login;
+  let readExcel;
+  let excelProduct;
 
   //store CSV data in variable
   const records = parse(
@@ -26,6 +29,8 @@ test.describe("sauceLab", () => {
     page = await context.newPage();
     productPage = new Product(page);
     login = new Login(page);
+    readExcel = new ReadFromExcel();
+    excelProduct = await readExcel.getProductName();
   });
 
   for (const record of records) {
@@ -41,7 +46,7 @@ test.describe("sauceLab", () => {
 
   test("positivetest", async () => {
     try {
-      await productPage.productPage1(data.alphabate, data.productName1);
+      await productPage.productPage1(data.alphabate, excelProduct[0]);
       await logger.Logger.info("Completed");
       await productPage.productPage2(data.productName2);
     } catch (e: any) {
